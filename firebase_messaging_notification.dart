@@ -3,13 +3,14 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 
 class FirebaseMessagingNotification {
-  static FirebaseMessagingNotification get to => Get.find<FirebaseMessagingNotification>();
-  
+  static FirebaseMessagingNotification get to =>
+      Get.find<FirebaseMessagingNotification>();
+
   final NotificationService _notificationService;
 
   FirebaseMessagingNotification(this._notificationService);
 
-  Future<void> initialize() async {
+  Future<void> initializeFirebaseMessaging() async {
     await FirebaseMessaging.instance
         .setForegroundNotificationPresentationOptions(
       badge: true,
